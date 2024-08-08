@@ -68,7 +68,7 @@ const ImageContent = () => {
         <h1 className="mt-20 flex justify-content text-2xl mb-7 w-[1280px]">
           <strong>All Blog Posts</strong>
         </h1>
-        <div className="w-[1280px] flex justify-between ">
+        <div className="w-[1280px] flex justify-between mb-5">
           <ul className="text-sm list flex gap-5 ">
             <li className="text-black hover:text-green-500">All</li>
             <li className="text-black hover:text-green-500">Design</li>
