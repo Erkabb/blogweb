@@ -11,7 +11,7 @@ const Trending = ({ newsImg }) => {
           <button className="w-24 h-7 bg-blue-600 rounded-md text-white">
             Technology
           </button>
-          <h2 className="text-xl">
+          <h2 className="text-xl text-white">
             <strong>
               The Impact of Technology on the Workplace: How Technology is
               Changing

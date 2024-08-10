@@ -52,7 +52,7 @@ const Allposts = () => {
         ))}
       </div>
       <div className="m-auto w-[1280px] h-[80px] flex items-center justify-center my-16">
-        <button className="w-[123px] h-[50px] border border-solid border-gray-400 text-gray-700 rounded-xl hover:border-green-500">
+        <button className="w-[153px] h-[50px] border border-solid border-gray-400 text-gray-700 rounded-xl hover:border-green-500">
           Load more
         </button>
       </div>

@@ -2,6 +2,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 import Trending from "./trending-con";
 import Allposts from "./allposts";
+import Link from "next/link";
 
 const trendingNews = [
   {
@@ -77,8 +78,7 @@ const ImageContent = () => {
             <li className="text-black hover:text-green-500">Technology</li>
             <li className="text-black hover:text-green-500">Branding</li>
           </ul>
-
-          <p className="text-sm text-black hover:text-green-500">View all</p>
+        <Link href="/blog" className="hover:text-green-500">View all</Link>
         </div>
         <Allposts />
       </div>

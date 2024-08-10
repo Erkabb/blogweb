@@ -1,8 +1,6 @@
-import Header from "@/components/header";
-import Allposts from "@/components/maincontent/allposts";
-import Blogs from "./blogs";
+
 import Articles from "@/components/maincontent/articles";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Bloghome() {
   const [articles, setArticles] = useState([]);
@@ -34,13 +32,12 @@ export default function Bloghome() {
         {" "}
         <button
           onClick={() => setCount(count + 1)}
-          className="w-[90x] h-[36px] border border-solid border-gray-300 rounded-md"
+          className="w-[130px] h-[50px] border border-solid border-gray-300 rounded-md text-sm hover:border-green-500"
         >
           Load More
         </button>
       </div>
-      {/* <Blogs />
-      <Allposts /> */}
+   
     </main>
   );
 }
