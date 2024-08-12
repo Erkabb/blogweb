@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 
 
 
-const ArticleDetail = ({pfp, name}) => {
+const ArticleDetail = () => {
   const {query} = useRouter();
   console.log("qr", query.id);
   const [articleDetail, setArticleDetail] = useState(null);

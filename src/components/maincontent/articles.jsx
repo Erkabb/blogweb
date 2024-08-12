@@ -4,7 +4,7 @@ import React from "react";
 
 const Articles = ({ article }) => {
   return (
-    <div className="flex mt-10">
+    <div className="flex mt-10 hover:bg-gray-100">
       <Link href={"/blog/" + article.id}>
         <div className="border p-4 gap-4 rounded-[16px] w-[396px]">
           <div className="">
