@@ -1,10 +1,14 @@
 import Layout from "@/components/layout";
+import SearchProvider from "@/provider/search-provider";
+
 import "@/styles/globals.css";
 
 export default function App({ Component, pageProps }) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <SearchProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </SearchProvider>
   );
 }
