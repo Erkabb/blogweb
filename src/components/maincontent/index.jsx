@@ -78,7 +78,9 @@ const ImageContent = () => {
             <li className="text-black hover:text-green-500">Technology</li>
             <li className="text-black hover:text-green-500">Branding</li>
           </ul>
-        <Link href="/blog" className="hover:text-green-500">View all</Link>
+          <Link href="/blog" className="hover:text-green-500">
+            View all
+          </Link>
         </div>
         <Allposts />
       </div>
