@@ -3,6 +3,8 @@ import { IoIosArrowForward } from "react-icons/io";
 import Trending from "./trending-con";
 import Allposts from "./allposts";
 import Link from "next/link";
+import Carousel from "../carousel";
+import { useState } from "react";
 
 const trendingNews = [
   {
@@ -23,11 +25,13 @@ const trendingNews = [
   },
 ];
 
+const slides = ["bg-green-2=400", "bg-pink-400", "bg-gray-400"];
 const ImageContent = () => {
+  const [currentIdx, setCurrentIdx] = useState(0);
   return (
     <section className="flex flex-col items-center gap-20">
       <div>
-        <div className="mt-10 relative flex justify-center">
+        {/* <div className="mt-10 relative flex justify-center">
           <img
             src="https://s3-alpha-sig.figma.com/img/eb4f/aad2/4394e91108e011b0d07581596959713b?Expires=1723420800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=p895KkdD7DfcCulv8AGa6shbfkAQ13LytdYV4Wsw0PQ-FL22qhaG4o-eKbtZx7eC5DRPpiBpCGUpjA693ZOyVqMT2J470CF5oPujcq9NlJ3lWfW-JUAgxgQbjWqUjceO~P6LG5zQBnAXLsDlYyLfGZGXpGRAWM~PjK7cuD7ZeIWAB~9B25Ya0Qi6N8hGL5AmXlwT33Lqr3vmpMzULNrBhPpc~DCGFZ0rpAhc~vU7mdu7gEWoRMdWX1LA0jTsS3k~eM1KcmqcWGuHD0rhQ-KTBspRHuS7cVmwTdluAQNY5C0Tf2yC8pqCOm2771pFOW-2NiyECQSKSclX-GQ9714nJw__"
             alt=""
@@ -42,15 +46,26 @@ const ImageContent = () => {
             </h1>
             <span className="text-gray-400 ">August 20, 2022</span>
           </div>
+        </div> */}
+        <div className="w-[1280px] h-[520px] rounded-md bg-blue-300 mt-10">
+          <Carousel slides={slides} currentIdx={currentIdx} />
         </div>
         <div className="flex justify-end p-2 w-[1280px] m-auto">
-          <button>
+          <button
+            onClick={() => {
+              setCurrentIdx(currentIdx - 1);
+            }}
+          >
             <IoIosArrowBack
               size={30}
               className="border solid border-white rounded-sm mr-2"
             />
           </button>
-          <button>
+          <button
+            onClick={() => {
+              setCurrentIdx(currentIdx + 1);
+            }}
+          >
             <IoIosArrowForward
               size={30}
               className="border solid border-white rounded-sm "

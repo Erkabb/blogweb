@@ -31,9 +31,11 @@ const SearchProvider = ({ children }) => {
       toast.success("Try again");
     }
   };
+
   useEffect(() => {
     getArticleData();
   }, [page]);
+
   return (
     <SearchContext.Provider
       value={{ searchValue, setSearchValue, articles, isLoading }}
