@@ -1,3 +1,4 @@
+import { EmblaCarousel } from "@/components/carousel";
 import Layout from "@/components/layout";
 import SearchProvider from "@/provider/search-provider";
 

@@ -3,8 +3,10 @@ import { IoIosArrowForward } from "react-icons/io";
 import Trending from "./trending-con";
 import Allposts from "./allposts";
 import Link from "next/link";
-import Carousel from "../carousel";
-import { useState } from "react";
+
+import { useState, useContext } from "react";
+import { EmblaCarousel } from "../carousel";
+import Articles from "./articles";
 
 const trendingNews = [
   {
@@ -25,9 +27,10 @@ const trendingNews = [
   },
 ];
 
-const slides = ["bg-green-2=400", "bg-pink-400", "bg-gray-400"];
 const ImageContent = () => {
   const [currentIdx, setCurrentIdx] = useState(0);
+
+  // const { articles } = useContext(EmblaContext);
   return (
     <section className="flex flex-col items-center gap-20">
       <div>
@@ -47,8 +50,8 @@ const ImageContent = () => {
             <span className="text-gray-400 ">August 20, 2022</span>
           </div>
         </div> */}
-        <div className="w-[1280px] h-[520px] rounded-md bg-blue-300 mt-10">
-          <Carousel slides={slides} currentIdx={currentIdx} />
+        <div className="w-[1280px] h-[520px] rounded-md mt-10">
+          <EmblaCarousel currentIdx={currentIdx} />
         </div>
         <div className="flex justify-end p-2 w-[1280px] m-auto">
           <button

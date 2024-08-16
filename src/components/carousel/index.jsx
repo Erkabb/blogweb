@@ -1,29 +1,30 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
+import Articles from "../maincontent/articles";
+import { EmblaContext } from "./main-blog";
 
-const Carousel = ({ slides }) => {
-  const { slides, options } = props;
-  const [emblaRef, emblaApi] = useEmblaCarousel(options);
+export function EmblaCarousel({ currentIdx }) {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false });
+
+  const { articles } = useContext(EmblaContext);
+  useEffect(() => {
+    if (emblaApi) {
+      console.log(emblaApi.slideNodes());
+    }
+  }, [emblaApi]);
+
   return (
-    <section className="embla">
-      <div className="embla__viewport" ref={emblaRef}>
-        <div className="embla__container">
-          {slides.map((i) => (
-            <div className="embla__slide" key={i}>
-              <div className="embla__slide__number">{i + 1}</div>
-            </div>
+    <div className="embla " ref={emblaRef}>
+      <div
+        className="embla__container flex h-full transition-all duration-150"
+        style={{ transform: `translateX(-${currentIdx * 100}%)` }}
+      >
+        <div className="embla__slide  rounded-lg">
+          {articles.map((article) => (
+            <Articles article={article} />
           ))}
         </div>
       </div>
-
-      <div className="embla__controls">
-        <div className="embla__buttons">
-          <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
-          <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
-        </div>
-      </div>
-    </section>
+    </div>
   );
-};
-
-export default Carousel;
+}
